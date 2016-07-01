@@ -34,7 +34,7 @@
                                 <rect key="frame" x="14" y="66" width="572" height="31"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syv-BG-gqc">
-                                <rect key="frame" x="31" y="201" width="538" height="20"/>
+                                <rect key="frame" x="267" y="201" width="67" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,11 +47,11 @@
                             <constraint firstItem="syv-BG-gqc" firstAttribute="top" secondItem="eeE-UK-sVc" secondAttribute="bottom" constant="40" id="7XL-eE-r0I"/>
                             <constraint firstItem="ElN-7w-g16" firstAttribute="centerX" secondItem="rXj-wd-G0N" secondAttribute="centerX" id="AUa-59-7sN"/>
                             <constraint firstItem="rXj-wd-G0N" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Atp-aG-1xP"/>
-                            <constraint firstItem="syv-BG-gqc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="FNd-Rr-0T9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="syv-BG-gqc" secondAttribute="trailing" constant="15" id="HLk-Ms-4Ex"/>
+                            <constraint firstItem="eeE-UK-sVc" firstAttribute="width" secondItem="syv-BG-gqc" secondAttribute="width" id="MHu-gn-EtM"/>
                             <constraint firstItem="eeE-UK-sVc" firstAttribute="centerX" secondItem="ElN-7w-g16" secondAttribute="centerX" constant="0.5" id="PK6-pe-xMt"/>
                             <constraint firstItem="ElN-7w-g16" firstAttribute="top" secondItem="rXj-wd-G0N" secondAttribute="bottom" constant="8" id="Wfr-K1-ptz"/>
                             <constraint firstItem="ElN-7w-g16" firstAttribute="width" secondItem="rXj-wd-G0N" secondAttribute="width" id="cug-vv-Psx"/>
+                            <constraint firstItem="eeE-UK-sVc" firstAttribute="centerX" secondItem="syv-BG-gqc" secondAttribute="centerX" id="ljx-gg-COf"/>
                             <constraint firstItem="eeE-UK-sVc" firstAttribute="top" secondItem="ElN-7w-g16" secondAttribute="bottom" constant="34" id="uuL-01-poT"/>
                             <constraint firstItem="rXj-wd-G0N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="xAn-hH-Hkr"/>
                         </constraints>
