@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeE-UK-sVc">
+                                <rect key="frame" x="267" y="130" width="67" height="31"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="% Alcohol Content per Beer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rXj-wd-G0N">
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="ElN-7w-g16">
+                                <rect key="frame" x="14" y="66" width="572" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syv-BG-gqc">
+                                <rect key="frame" x="31" y="201" width="538" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="rXj-wd-G0N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3a6-0Q-6M2"/>
+                            <constraint firstItem="syv-BG-gqc" firstAttribute="top" secondItem="eeE-UK-sVc" secondAttribute="bottom" constant="40" id="7XL-eE-r0I"/>
+                            <constraint firstItem="ElN-7w-g16" firstAttribute="centerX" secondItem="rXj-wd-G0N" secondAttribute="centerX" id="AUa-59-7sN"/>
+                            <constraint firstItem="rXj-wd-G0N" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Atp-aG-1xP"/>
+                            <constraint firstItem="syv-BG-gqc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="FNd-Rr-0T9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="syv-BG-gqc" secondAttribute="trailing" constant="15" id="HLk-Ms-4Ex"/>
+                            <constraint firstItem="eeE-UK-sVc" firstAttribute="centerX" secondItem="ElN-7w-g16" secondAttribute="centerX" constant="0.5" id="PK6-pe-xMt"/>
+                            <constraint firstItem="ElN-7w-g16" firstAttribute="top" secondItem="rXj-wd-G0N" secondAttribute="bottom" constant="8" id="Wfr-K1-ptz"/>
+                            <constraint firstItem="ElN-7w-g16" firstAttribute="width" secondItem="rXj-wd-G0N" secondAttribute="width" id="cug-vv-Psx"/>
+                            <constraint firstItem="eeE-UK-sVc" firstAttribute="top" secondItem="ElN-7w-g16" secondAttribute="bottom" constant="34" id="uuL-01-poT"/>
+                            <constraint firstItem="rXj-wd-G0N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="xAn-hH-Hkr"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="L3A-Jl-nVc" appends="YES" id="3Xo-ri-6J3"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="L3A-Jl-nVc"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
