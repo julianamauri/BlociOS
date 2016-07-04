@@ -34,10 +34,18 @@
 
 - (IBAction)sliderValueDidChange:(UISlider *)sender {
     NSLog(@"Slider value changed to %f", sender.value);
-    [self.beerPercentTextField resignFirstResponder];
+    [self updateDisplay];
 }
 
 - (IBAction)buttonPressed:(id)sender {
+    [self updateDisplay];
+}
+
+- (IBAction)tapGestureDidFire:(UITapGestureRecognizer *)sender {
+    [self.beerPercentTextField resignFirstResponder];
+}
+
+- (void)updateDisplay {
     [self.beerPercentTextField resignFirstResponder];
     // first, calculate how much alcohol is in all those beers...
     int numberOfBeers = self.beerCountSlider.value;
@@ -66,10 +74,10 @@
     // generate the result text, and display it on the label
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.1f %@ of wine.", nil), numberOfBeers, beerText,  [self.beerPercentTextField.text floatValue], numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
     self.resultLabel.text = resultText;
+    
+    self.title = [NSString stringWithFormat:@"Wine (%.0f %@)",numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
 }
 
-- (IBAction)tapGestureDidFire:(UITapGestureRecognizer *)sender {
-    [self.beerPercentTextField resignFirstResponder];
-}
+
 
 @end
