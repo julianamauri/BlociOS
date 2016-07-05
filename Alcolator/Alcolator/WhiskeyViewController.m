@@ -14,10 +14,16 @@
 
 @implementation WhiskeyViewController
 
-- (void)buttonPressed:(UIButton *)sender;
-{
-    [self.beerPercentTextField resignFirstResponder];
+- (IBAction)sliderValueDidChange:(UISlider *)sender {
+    [self BadgeValueWithWholeNumberOfWhiskeyGlasses];
     
+}
+
+- (IBAction)buttonPressed:(id)sender {
+    [self BadgeValueWithWholeNumberOfWhiskeyGlasses];
+}
+
+- (void)BadgeValueWithWholeNumberOfWhiskeyGlasses {
     int numberOfBeers = self.beerCountSlider.value;
     int ouncesInOneBeerGlass = 12;  //assume they are 12oz beer bottles
     
@@ -31,6 +37,8 @@
     float ouncesOfAlcoholPerWhiskeyGlass = ouncesInOneWhiskeyGlass * alcoholPercentageOfWhiskey;
     float numberOfWhiskeyGlassesForEquivalentAlcoholAmount = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWhiskeyGlass;
     
+    int wholeNumberWhiskeyGlasses = numberOfWhiskeyGlassesForEquivalentAlcoholAmount;
+    
     NSString *beerText;
     
     if (numberOfBeers == 1) {
@@ -41,13 +49,16 @@
     
     NSString *whiskeyText;
     
-    if (numberOfWhiskeyGlassesForEquivalentAlcoholAmount == 1) {
+    if (wholeNumberWhiskeyGlasses == 1) {
         whiskeyText = NSLocalizedString(@"shot", @"singular shot");
     } else {
         whiskeyText = NSLocalizedString(@"shots", @"plural of shot");
     }
-    NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.1f %@ of whiskey.", nil), numberOfBeers, beerText, [self.beerPercentTextField.text floatValue], numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
+    NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %ld %@ of whiskey.", nil), numberOfBeers, beerText, [self.beerPercentTextField.text floatValue], wholeNumberWhiskeyGlasses, whiskeyText];
     self.resultLabel.text = resultText;
+    
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", wholeNumberWhiskeyGlasses]];
+    
 }
 
 @end
